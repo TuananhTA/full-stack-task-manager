@@ -1,0 +1,21 @@
+server:
+  port: 8084
+  servlet:
+    context-path: /ws-service
+
+spring:
+  application:
+    name: ws-service
+
+  kafka:
+    bootstrap-servers: localhost:9094
+    consumer:
+      group-id: ws-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+app:
+  services:
+    profile: "http://localhost:8082/profile-manager/internal/user"
+    task: "http://localhost:8081/task-manager/"

@@ -1,0 +1,25 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /task-manager
+
+spring:
+  application:
+    name: task-service
+  datasource:
+    url: "jdbc:mysql://localhost:3306/task-db?createDatabaseIfNotExist=true"
+    driverClassName: "com.mysql.cj.jdbc.Driver"
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  kafka:
+    bootstrap-servers: localhost:9094
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+app:
+  services:
+    profile: "http://localhost:8082/profile-manager/internal/user"

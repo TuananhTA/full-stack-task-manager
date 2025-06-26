@@ -1,0 +1,21 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /profile-manager
+
+spring:
+  application:
+    name: profile-service
+  datasource:
+    url: "jdbc:mysql://localhost:3306/profile-db?createDatabaseIfNotExist=true"
+    driverClassName: "com.mysql.cj.jdbc.Driver"
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+jwt:
+    secret: "qEHFsTyk3Q9vse038kGWG+WGN56HxqvgI3h3DRBqf1w="
+    expiration: 3600000

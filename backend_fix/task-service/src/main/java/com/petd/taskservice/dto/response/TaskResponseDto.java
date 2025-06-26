@@ -1,0 +1,29 @@
+package com.petd.taskservice.dto.response;
+import java.time.LocalDate;
+import java.util.List;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.FieldDefaults;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@FieldDefaults(level = AccessLevel.PRIVATE)
+public class TaskResponseDto {
+  String id;
+  String name;
+  String description;
+  String progress;
+  LocalDate startDate;
+  LocalDate endDate;
+  UserProfileResponse creator;
+  StatusResponseDto status;
+  PriorityResponseDto priority;
+  String projectId;
+  List<UserProfileResponse> assignedUsers;
+
+}
